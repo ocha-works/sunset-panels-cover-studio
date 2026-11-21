@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sunset Panels — Vice Cover Studio</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main class="studio">
+  <aside class="controls">
+    <h1>Sunset Panels</h1>
+    <p class="tagline">Your photo, a caption, and three slanted panels of
+      sunset — a poster-style cover in under a minute, made entirely on
+      your machine.</p>
+
+    <h2>1 · Photos</h2>
+    <p class="hint">Click a panel in the preview to select it, then give it
+      a photo. Drag the preview to reframe the selected panel's photo.</p>
+    <label class="file">Your photo <input id="photo" type="file" accept="image/*"></label>
+    <div id="samples" class="chips" role="group" aria-label="Sample photos">
+      <button type="button" data-sample="sunset-drive">Sunset Drive</button>
+      <button type="button" data-sample="boulevard">Boulevard</button>
+      <button type="button" data-sample="pier">The Pier</button>
+    </div>
+    <button id="fill-all" type="button" class="wide">Fill every panel with one photo</button>
+    <div class="framing">
+      <span id="panel-name">Panel 1</span>
+      <label>Zoom <input id="zoom" type="range" min="100" max="300" value="100"></label>
+      <label>Pan ↔ <input id="panx" type="range" min="-50" max="50" value="0"></label>
+      <label>Pan ↕ <input id="pany" type="range" min="-50" max="50" value="0"></label>
+    </div>
+
+    <h2>2 · Look</h2>
+    <div id="layouts" class="chips" role="group" aria-label="Panel layout">
+      <button type="button" data-value="diagonal" class="on">Diagonal Trio</button>
+      <button type="button" data-value="grid">Grid Story</button>
+      <button type="button" data-value="hero">Hero &amp; Strips</button>
+    </div>
+    <div id="grades" class="chips" role="group" aria-label="Colour grade">
+      <button type="button" data-value="sunset" class="on">Vice Sunset</button>
+      <button type="button" data-value="neon">Neon Night</button>
+      <button type="button" data-value="golden">Golden Hour</button>
+      <button type="button" data-value="noir">Midnight Noir</button>
+    </div>
+    <div id="sizes" class="chips" role="group" aria-label="Post size">
+      <button type="button" data-value="1080x1080">Square 1080 × 1080</button>
+      <button type="button" data-value="1080x1350">Portrait 1080 × 1350</button>
+      <button type="button" data-value="1920x1080" class="on">Wide 1920 × 1080</button>
+    </div>
+
+    <h2>3 · Words</h2>
+    <label>Caption <input id="caption" type="text" maxlength="30" value="Vice Heat"></label>
+    <label>Subtitle <input id="subtitle" type="text" maxlength="60" value="One last ride on the sunset strip"></label>
+    <div id="inks" class="chips" role="group" aria-label="Caption ink">
+      <button type="button" data-value="grade" class="on">Grade ink</button>
+      <button type="button" data-value="white">White</button>
+      <button type="button" data-value="gold">Gold</button>
+      <button type="button" data-value="candy">Candy</button>
+    </div>
+
+    <button id="export" type="button" class="export">Export PNG</button>
+    <p id="status" role="status"></p>
+    <p class="fineprint">Photos are read on your machine and never uploaded.
+      An original fan-made tool in the spirit of open-world game posters;
+      not affiliated with any game publisher.</p>
+  </aside>
+  <section class="stage">
+    <canvas id="stage" width="1920" height="1080" aria-label="Cover preview"></canvas>
+  </section>
+</main>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
